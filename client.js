@@ -42,12 +42,13 @@ function onReady() {
     console.log('brand is', brand);
 
     $('#harmonicas').append(
-      `<li class="harmonica-item"> Brand is: ${brand} </li class='deleteBtn'> <button>DeleteME</button>`
+      `<li class="harmonica-item"> Brand is: ${brand} </li> <button class='deleteBtn'>DeleteME</button>`
     );
   }
 
   function DeleteButton() {
     console.log('button clicked');
     $('.harmonica-item').remove();
+    $('.deleteBtn').remove();
   }
 }
