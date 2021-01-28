@@ -15,6 +15,10 @@ function onReady() {
   // $(h2).css('background-color', 'green');
   $('h2').addClass('froggy');
 
+  // change child3
+  $('.bestC').addClass('purpleRain');
+  $('.bestC').append('<h2> Purple-Rain </h2>');
+
   // change the text
   const h1Text = $(h1).text();
   console.log('h1Text is ', h1Text);
