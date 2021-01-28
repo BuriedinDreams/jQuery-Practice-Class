@@ -25,4 +25,29 @@ function onReady() {
 
   const louderText = h1Text.toUpperCase() + '!!!!';
   $('h1').text(louderText);
+
+  // Event delegation
+  // descendent selectors
+  $('#harmonicas').on('click', DeleteButton);
+  console.log('DeleteButton is', $(DeleteButton));
+
+  $('#submitBtn').on('click', addAHarmonica);
+
+  function addAHarmonica() {
+    //stuff to do when button is clicked.
+    console.log('button is clicked!');
+
+    // grab that data
+    let brand = $('#brand').val();
+    console.log('brand is', brand);
+
+    $('#harmonicas').append(
+      `<li class="harmonica-item"> Brand is: ${brand} </li class='deleteBtn'> <button>DeleteME</button>`
+    );
+  }
+
+  function DeleteButton() {
+    console.log('button clicked');
+    $('.harmonica-item').remove();
+  }
 }
