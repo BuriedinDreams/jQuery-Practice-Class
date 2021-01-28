@@ -33,22 +33,29 @@ function onReady() {
 
   $('#submitBtn').on('click', addAHarmonica);
 
-  function addAHarmonica() {
+  function addAHarmonica(event) {
     //stuff to do when button is clicked.
     console.log('button is clicked!');
+    event.preventDefault(); // this will stop the default.
 
     // grab that data
     let brand = $('#brand').val();
     console.log('brand is', brand);
 
     $('#harmonicas').append(
-      `<li class="harmonica-item"> Brand is: ${brand} </li> <button class='deleteBtn'>DeleteME</button>`
+      `<li class="harmonica-item"> 
+      Brand is: ${brand} 
+      <button class='deleteBtn'>Delete Me</button> 
+      </li> `
     );
   }
 
   function DeleteButton() {
     console.log('button clicked');
-    $('.harmonica-item').remove();
-    $('.deleteBtn').remove();
+    // $('.harmonica-item').remove();
+    // $('.deleteBtn').remove();
+    let thisThing = $(this);
+    console.log(thisThing);
+    $(this).parent().remove();
   }
 }
