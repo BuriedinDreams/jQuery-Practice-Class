@@ -28,8 +28,10 @@ function onReady() {
 
   // Event delegation
   // descendent selectors
-  $('#harmonicas').on('click', DeleteButton);
-  console.log('DeleteButton is', $(DeleteButton));
+  $(document).on('click', '.deleteBtn', DeleteButton);
+  console.log('deleteBtn is', $('.deleteBtn'));
+  // $('#harmonicas').on('click', DeleteButton);
+  // console.log('DeleteButton is', $(DeleteButton));
 
   $('#submitBtn').on('click', addAHarmonica);
 
@@ -54,8 +56,10 @@ function onReady() {
     console.log('button clicked');
     // $('.harmonica-item').remove();
     // $('.deleteBtn').remove();
+
     let thisThing = $(this);
-    console.log(thisThing);
+    console.log('what is this?!', thisThing);
+
     $(this).parent().remove();
   }
 }
